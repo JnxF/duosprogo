@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Badge, Box, Checkbox, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, Tbody, Td, Tr, VStack } from "@chakra-ui/react";
+import { ArrowForwardIcon, ExternalLinkIcon } from "@chakra-ui/icons";
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Badge, Box, Checkbox, Heading, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, Tbody, Td, Text, Tr, VStack } from "@chakra-ui/react";
 import React from "react";
 import { organizedTranslations } from "../../Data";
 import { generalState } from "../../state/state";
@@ -30,7 +30,7 @@ export default function Modules() {
             </Box>
         ))
         }
-        <Button size="sm" onClick={onOpen} rightIcon={<ArrowForwardIcon />} colorScheme="blue" isDisabled={!activated} variant="outline">Viser glosar</Button>
+        <Button size="sm" onClick={onOpen} rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline">Viser glosar</Button>
         <GlosarModal isOpen={isOpen} onClose={onClose} />
     </>
 }
@@ -43,6 +43,11 @@ function GlosarModal({ isOpen, onClose }: any) {
                 <ModalHeader>Glosar</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
+                    <Text mb={5}>
+                        Glosaret for denne app er hentet fra Forlaget Synopes bøger{" "}
+                        <Link color="blue.600" href="http://synope.dk/paa-vej-til-dansk.htm" isExternal>På vej til dansk <ExternalLinkIcon mx="2px" /></Link> (modul 1, eller DU 3.1) og{" "}
+                        <Link color="blue.600" href="http://synope.dk/videre-mod-dansk.htm" isExternal>Videre mod dansk <ExternalLinkIcon mx="2px" /></Link> (modul 2, eller DU 3.2).
+                    </Text>
                     <Accordion allowToggle>
                         {Object.entries(organizedTranslations).map(([modul, categories]) =>
                             <AccordionItem>
@@ -75,6 +80,11 @@ function GlosarModal({ isOpen, onClose }: any) {
                             </AccordionItem>
                         )}
                     </Accordion>
+                    <Heading size={"sm"} mt={5} color={"red.600"}>Bæmark!</Heading>
+                    <Text mt={1}>
+                        Dette glosaret er ikke blevet gennemgået af nogen.
+                        Hvis der er nogen fejl, bedes du kontakte forfatteren.
+                    </Text>
                 </ModalBody>
 
                 <ModalFooter>
