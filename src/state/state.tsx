@@ -138,9 +138,9 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
     toggleCategory: (category: string): void => {
         let { selectedCategories } = get();
         if (selectedCategories.includes(category)) {
-            selectedCategories.filter(c => c !== category);
+            selectedCategories = selectedCategories.filter(c => c !== category);
         } else {
-            selectedCategories = [...selectedCategories, category];
+            selectedCategories = selectedCategories.concat(category)
         }
         set({ selectedCategories: selectedCategories })
     },
