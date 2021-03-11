@@ -1,12 +1,12 @@
 import { Box, ChakraProvider, Container, Flex, theme } from "@chakra-ui/react";
 import * as React from "react";
-import '../App.scss';
+import { generalState } from "../state/state";
+import './App.scss';
 import Footer from "./gui/Footer";
 import Header from "./gui/Header";
 import Modules from "./gui/Modules";
 import { Score } from "./gui/Score";
 import Main from "./Main";
-import { generalState } from "./state";
 
 export function App() {
   return (

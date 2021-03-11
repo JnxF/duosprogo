@@ -4,7 +4,7 @@ import {
 } from "@chakra-ui/react"
 import * as React from "react"
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa"
-import { generalState } from "../state"
+import { generalState } from "../../state/state"
 
 type AudioSwitcherProps = Omit<IconButtonProps, "aria-label">
 

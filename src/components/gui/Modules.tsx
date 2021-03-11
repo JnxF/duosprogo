@@ -4,7 +4,7 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Badge, Box, Checkbox, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, Tbody, Td, Tr, VStack } from "@chakra-ui/react";
 import React from "react";
 import { organizedTranslations } from "../../Data";
-import { generalState } from "../state";
+import { generalState } from "../../state/state";
 
 export default function Modules() {
     const { isOpen, onOpen, onClose } = useDisclosure()

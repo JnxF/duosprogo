@@ -1,6 +1,6 @@
 import { Progress } from "@chakra-ui/progress";
 import React from "react";
-import { generalState } from "../state";
+import { generalState } from "../../state/state";
 
 export default function ProgressGame() {
     const totalTranslations = generalState(state => state.totalTranslations);

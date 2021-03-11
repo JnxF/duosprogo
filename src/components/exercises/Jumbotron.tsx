@@ -1,7 +1,7 @@
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Button, Heading, Text } from "@chakra-ui/react";
 import React from "react";
-import { generalState } from "../state";
+import { generalState } from "../../state/state";
 
 export default function Jumbotron({ onClick }: any) {
     const startGame = generalState(state => state.startGame);

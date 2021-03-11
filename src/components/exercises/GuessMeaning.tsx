@@ -1,7 +1,8 @@
 import { Alert, Box, Button, HStack, Spacer } from "@chakra-ui/react";
 import React from "react";
+import { generalState } from "../../state/state";
+import { States } from "../../state/States";
 import SentenceDisplayer from "../helpers/SentenceDisplayer";
-import { generalState, States } from "../state";
 import GeneralExercise from "./GeneralExercise";
 
 export default function GuessMeaning() {

@@ -1,7 +1,7 @@
 import { ArrowForwardIcon } from "@chakra-ui/icons"
 import { Alert, AlertIcon, AlertTitle, Button, Heading, HStack, Spacer, Table, Tbody, Td, Text, Th, Thead, Tr } from "@chakra-ui/react"
 import React from "react"
-import { generalState } from "../state"
+import { generalState } from "../../state/state"
 import GeneralExercise from "./GeneralExercise"
 
 export default function Summary() {

@@ -1,17 +1,7 @@
 import create, { GetState, SetState } from 'zustand';
 import { data, Translation } from '../Data';
-
-export enum States {
-    Jumbotron = "Jumbotron",
-    RunningExercise = "RunningExercise",
-    CheckingAnswer = "CheckingAnswer",
-    FinalSummary = "FinalSummary"
-}
-
-export enum ExerciseType {
-    GuessMeaningExercise = "GuessMeaningExercise",
-    TranslateSentenceExercise = "TranslateSentenceExercise"
-}
+import { ExerciseType } from './ExerciseType';
+import { States } from './States';
 
 export type GameState = {
     // General state
