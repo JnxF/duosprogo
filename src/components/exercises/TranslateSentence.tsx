@@ -1,4 +1,3 @@
-import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Alert, AlertDescription, AlertIcon, AlertTitle, Button, HStack, Spacer, Textarea } from "@chakra-ui/react";
 import React from "react";
 import SentenceDisplayer from "../helpers/SentenceDisplayer";
@@ -27,7 +26,7 @@ function NextStep() {
     return (
         <HStack mt={5}>
             <Spacer />
-            <Button size="lg" colorScheme="blue" onClick={gameState === States.RunningExercise ? generalState(state => state.checkAnswer) : generalState(state => state.addPositive)} rightIcon={gameState === States.CheckingAnswer ? <ArrowForwardIcon /> : undefined}>
+            <Button size="lg" colorScheme="blue" onClick={gameState === States.RunningExercise ? generalState(state => state.checkAnswer) : generalState(state => state.addPositive)}>
                 {gameState === States.RunningExercise ? "Tjek" : "Fortsæt"}
             </Button>
         </HStack>
