@@ -8,7 +8,7 @@ export default function Jumbotron({ onClick }: any) {
     const nextExercise = generalState(state => state.nextExercise);
 
     return <>
-        <Heading mb={4} size="2xl" as="h1">Lære dansk!</Heading>
+        <Heading mb={4} size="2xl" as="h1">🇩🇰 Lære dansk!</Heading>
         <Text fontSize="2xl">
             Vælg de emner til venstre, du vil øve på, og klik på knappen for at starte
         </Text>

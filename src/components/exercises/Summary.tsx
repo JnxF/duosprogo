@@ -45,7 +45,7 @@ export default function Summary() {
     }
 
     return (
-        <GeneralExercise title="Tillykke!" showBar={false}>
+        <GeneralExercise title="🎉 Tillykke!" showBar={false}>
             <Text fontSize="xl" mb={5}>
                 Du er færdig med øvelsen. Nu ved du lidt mere dansk.
             </Text>
