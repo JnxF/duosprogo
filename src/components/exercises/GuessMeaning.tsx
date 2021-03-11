@@ -16,7 +16,7 @@ export default function GuessMeaning() {
                 <Button size="lg" colorScheme="blue" onClick={generalState(state => state.checkAnswer)}>Vis</Button>
             </HStack>
             <Alert status="info" variant="subtle" mt={"8"} p={5}>
-                <SentenceDisplayer isDanish={false} answer>{danish ?? ""}</SentenceDisplayer>
+                <SentenceDisplayer isDanish={false}>{danish ?? ""}</SentenceDisplayer>
             </Alert>
             <HStack mt={8}>
                 <Spacer />
