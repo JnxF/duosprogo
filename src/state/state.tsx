@@ -31,6 +31,9 @@ export type GameState = {
     addPositive: () => void;
     addNegative: () => void;
 
+    playPositive: () => void;
+    playNegative: () => void;
+
     // Reset
     reset: () => void;
 };
@@ -96,15 +99,18 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
 
     addPositive: (): void => {
         const { correctAnswers } = get();
+        const { playPositive } = get();
         const { nextExercise } = get();
 
         set({ correctAnswers: correctAnswers + 1 });
+        playPositive();
         nextExercise();
     },
 
     addNegative: (): void => {
         const { wrongAnswers } = get();
         const { nextExercise } = get();
+        const { playNegative } = get();
         const { wrongTranslations } = get();
         const { currentTranslation } = get();
 
@@ -112,8 +118,12 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
             wrongAnswers: wrongAnswers + 1,
             wrongTranslations: [...wrongTranslations as Translation[], currentTranslation as Translation]
         });
+        playNegative();
         nextExercise();
     },
+
+    playPositive: (): void => { get().volumeActivated && new Audio("correct.wav").play() },
+    playNegative: (): void => { get().volumeActivated && new Audio("wrong.wav").play() },
 
     reset: (): void => {
         set({
