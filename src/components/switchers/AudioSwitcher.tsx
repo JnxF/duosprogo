@@ -16,7 +16,9 @@ export const AudioSwitcher: React.FC<AudioSwitcherProps> = (props) => {
         <IconButton
             size="md"
             fontSize="lg"
-            color="current"
+            variant="outline"
+            colorScheme="gray"
+            border={"2px"}
             marginLeft="2"
             icon={volumeActivated ? <FaVolumeUp /> : <FaVolumeMute />}
             onClick={toggleVolume}
