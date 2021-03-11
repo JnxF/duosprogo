@@ -9,6 +9,6 @@ export default function ProgressGame() {
 
     return <>
         <p>{completedTranslations} / {totalTranslations}</p>
-        <Progress mb={5} size="lg" value={percent} />
+        <Progress mb={5} size="lg" value={percent} isAnimated={true} />
     </>
 }
