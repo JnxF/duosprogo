@@ -9,6 +9,7 @@ import { generalState } from "../../state/state";
 export default function Modules() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const activated = generalState(state => state.modulsActivated);
+    const toggleCategory = generalState(state => state.toggleCategory);
 
     return <>
         {Object.entries(organizedTranslations).map(([modul, categories]) => (
@@ -16,7 +17,14 @@ export default function Modules() {
                 <Heading fontSize="md" mb="2">Modul {modul}</Heading>
                 <VStack align={"left"} pl={3} borderLeft={"2px"} borderColor={"gray.300"} spacing={1}>
                     {Object.entries(categories).map(([category]) =>
-                        <Checkbox isDisabled={!activated} defaultIsChecked size="sm">{category.replaceAll("_", " ")}</Checkbox>
+                        <Checkbox
+                            isDisabled={!activated}
+                            size="sm"
+                            key={category}
+                            onChange={(e) => toggleCategory(category)}
+                        >
+                            {category.replaceAll("_", " ")}
+                        </Checkbox>
                     )}
                 </VStack>
             </Box>

@@ -9,6 +9,9 @@ export type GameState = {
     modulsActivated: boolean;
     volumeActivated: boolean;
 
+    // Categories
+    selectedCategories: string[];
+
     // Translations
     currentTranslation?: Translation;
     selectedTranslations: Translation[];
@@ -34,6 +37,9 @@ export type GameState = {
     playPositive: () => void;
     playNegative: () => void;
 
+    // Categories
+    toggleCategory: (category: string) => void;
+
     // Reset
     reset: () => void;
 };
@@ -43,6 +49,9 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
     gameState: States.Jumbotron,
     modulsActivated: true,
     volumeActivated: true,
+
+    // Categories
+    selectedCategories: [],
 
     // Translations
     currentTranslation: undefined,
@@ -58,10 +67,11 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
 
     // State mutations
     startGame: () => {
+        const { selectedCategories } = get();
         set({
             gameState: States.RunningExercise,
             modulsActivated: false,
-            selectedTranslations: data.slice(0, 5),
+            selectedTranslations: data.filter(t => selectedCategories.includes(t.category)).slice(0, 5),
             totalTranslations: 5,
             correctAnswers: 0,
             completedTranslations: -1,
@@ -124,6 +134,16 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
 
     playPositive: (): void => { get().volumeActivated && new Audio("correct.wav").play() },
     playNegative: (): void => { get().volumeActivated && new Audio("wrong.wav").play() },
+
+    toggleCategory: (category: string): void => {
+        let { selectedCategories } = get();
+        if (selectedCategories.includes(category)) {
+            selectedCategories.filter(c => c !== category);
+        } else {
+            selectedCategories = [...selectedCategories, category];
+        }
+        set({ selectedCategories: selectedCategories })
+    },
 
     reset: (): void => {
         set({
