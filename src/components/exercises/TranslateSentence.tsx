@@ -1,4 +1,4 @@
-import { Alert, AlertDescription, AlertIcon, AlertTitle, Button, HStack, Spacer, Textarea } from "@chakra-ui/react";
+import { Alert, AlertDescription, AlertIcon, AlertTitle, Button, HStack, Spacer, Text, Textarea } from "@chakra-ui/react";
 import React from "react";
 import { AnswerScore } from "../../state/AnswerScore";
 import { generalState } from "../../state/state";
@@ -67,25 +67,27 @@ function Feedback() {
     )
 
     const wrong = (
-        <Alert status="error" variant="subtle" mt={"8"} px={5} pt={5} pb={8}>
+        <Alert status="error" variant="subtle" mt={"8"} px={5} py={7}>
             <AlertIcon boxSize="40px" mr={0} />
             <AlertTitle mt={1} mb={1} ml={5} fontSize="xl">
                 Oops!
             </AlertTitle>
-            <AlertDescription ml={5}>Det rigtige svar er:
+            <AlertDescription ml={5} mt={-3}>
+                <Text mb={1}>Det rigtige svar er</Text>
                 <SentenceDisplayer isDanish={false}>{english ?? ""}</SentenceDisplayer>
             </AlertDescription>
         </Alert>
     )
 
     const almost = (
-        <Alert status="success" variant="subtle" mt={"8"} p={5}>
+        <Alert status="success" variant="subtle" mt={"8"} px={5} py={7}>
             <AlertIcon boxSize="40px" mr={0} />
             <AlertTitle mt={1} mb={1} ml={5} fontSize="xl">
                 Du har næsten ret!
             </AlertTitle>
 
-            <AlertDescription ml={5}>Det rigtige svar er:
+            <AlertDescription ml={5} mt={-3}>
+                <Text mb={1}>Det rigtige svar er</Text>
                 <SentenceDisplayer isDanish={false}>{english ?? ""}</SentenceDisplayer>
             </AlertDescription>
         </Alert>
