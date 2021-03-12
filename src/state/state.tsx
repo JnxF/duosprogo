@@ -75,7 +75,10 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
 
         let newQuestions = data.filter(t => selectedCategories.includes(t.category));
         shuffle(newQuestions);
-        newQuestions = newQuestions.slice(0, 5);
+        newQuestions = newQuestions.slice(0, 15);
+        if (newQuestions.length === 0) {
+            return;
+        }
 
         set({
             gameState: States.RunningExercise,
