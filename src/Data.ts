@@ -1223,6 +1223,402 @@ export const data: Translation[] = [
         "english": "It's from the school",
         "modul": 1,
         "category": "hvis..._er_det"
+    },
+    {
+        "danish": "Du er inviteret til middag kl. 18",
+        "english": "You are invited to dinner at. 18",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Hvad tid kommer du?",
+        "english": "What time are you coming?",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Før klokken 18",
+        "english": "Before 18 o'clock",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Efter klokken 18",
+        "english": "After 18 o'clock",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Hvad gør du i dit hjemland?",
+        "english": "What do you do in your home country?",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Hvilke traditionen har I?",
+        "english": "Which tradition do you have?",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Du skal have gæster til middag",
+        "english": "You have to have guests for dinner",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Gæsterne ringer på døren",
+        "english": "Guests knock on the door",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Du skal bruge saltet",
+        "english": "You need salt",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Du har besøgt en ven",
+        "english": "You have visited a friend",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Det er sent, og du skal gå",
+        "english": "It's late, and you must go",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Han er lige flyttet",
+        "english": "He just moved",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Hvordan har I det?",
+        "english": "How are you?",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Lørdag passer os fint",
+        "english": "Saturday works for us",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Hvad tid skal vi komme?",
+        "english": "When should we come?",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Det lyder godt",
+        "english": "It sounds good",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Hvor er de smukke",
+        "english": "How beautiful",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Klokken er mange",
+        "english": "It's late",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Det var rigtig hyggeligt",
+        "english": "It was really nice",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Blomsterne er flotte",
+        "english": "The flowers are beautiful",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Udsigten er fantastik",
+        "english": "The view is fantastik",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Kærlig hilsen",
+        "english": "Yours truly",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "Vi inviterer jer",
+        "english": "We invite you",
+        "modul": 2,
+        "category": "invitationer_gæster_fester"
+    },
+    {
+        "danish": "humør og følelser",
+        "english": "mood and emotions",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Hun er rigtig glad",
+        "english": "She is really happy",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Hun er spændt på at se dem igen",
+        "english": "She is excited to see them again",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Jeff er lykkelig",
+        "english": "Jeff is happy",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Han er stolt af sin lille søn",
+        "english": "He is proud of his little son",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Hun er skuffet og ked af det",
+        "english": "She is disappointed and sad",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Hun er ikke helt frisk",
+        "english": "She is not quite fresh",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Er der noget i vejen?",
+        "english": "Is there something wrong?",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "De er lidt bekymrede",
+        "english": "They are a little worried",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Hvad er der sket for Jeff?",
+        "english": "What happened to Jeff?",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Jeg har det godt",
+        "english": "I feel good",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Hun har det fint",
+        "english": "She's fine",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Vi har det o.k.",
+        "english": "We're fine",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "De har det dårligt",
+        "english": "They feel bad",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Du er i godt humør",
+        "english": "You are in a good mood",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Hun er i dårligt humør",
+        "english": "She is in a bad mood",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "glad",
+        "english": "glad",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "tildreds",
+        "english": "tildreds",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "lykkelig",
+        "english": "happy",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "stolt",
+        "english": "proud",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "ked af det",
+        "english": "sorry",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "ulykkelig",
+        "english": "unhappy",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "sur",
+        "english": "angry",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "vred",
+        "english": "angry",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "irriteret",
+        "english": "annoyed",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "utilfreds",
+        "english": "dissatisfied",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "skuffet",
+        "english": "disappointed",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "nervøs",
+        "english": "nervous",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "bange",
+        "english": "afraid",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "overrasket",
+        "english": "surprised",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "stresset",
+        "english": "stressed out",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Hun ser glad ud",
+        "english": "She looks happy",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Han ser glad ud",
+        "english": "He looks happy",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Du ser trist ud",
+        "english": "You look sad",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Hun smiler",
+        "english": "She smiles",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Du griner",
+        "english": "You are laughing",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Jeg græder",
+        "english": "I'm crying",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Det lyder godt",
+        "english": "It sounds good",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Super!",
+        "english": "Super!",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Hvor godt!",
+        "english": "How well!",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Det kan jeg godt forstå",
+        "english": "I can understand that",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "Held og lykke",
+        "english": "Good luck",
+        "modul": 2,
+        "category": "humør_følelser"
+    },
+    {
+        "danish": "God fornøjelse!",
+        "english": "Enjoy!",
+        "modul": 2,
+        "category": "humør_følelser"
     }
 ]
 
