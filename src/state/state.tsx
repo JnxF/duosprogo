@@ -1,5 +1,7 @@
 import create, { GetState, SetState } from 'zustand';
 import { data, Translation } from '../Data';
+import shuffle from '../utils/shuffle';
+import { AnswerScore } from './AnswerScore';
 import { ExerciseType } from './ExerciseType';
 import { States } from './States';
 
@@ -20,6 +22,7 @@ export type GameState = {
     completedTranslations: number;
     correctAnswers: number;
     wrongAnswers: number;
+    answerScore?: AnswerScore;
 
     // Current exercise
     exerciseType?: ExerciseType;
@@ -33,6 +36,7 @@ export type GameState = {
     // Points
     addPositive: () => void;
     addNegative: () => void;
+    addConditional: () => void;
 
     playPositive: () => void;
     playNegative: () => void;
@@ -51,7 +55,7 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
     volumeActivated: true,
 
     // Categories
-    selectedCategories: [],
+    selectedCategories: Array.from(new Set(data.map(d => d.category)).values()),
 
     // Translations
     currentTranslation: undefined,
@@ -68,17 +72,64 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
     // State mutations
     startGame: () => {
         const { selectedCategories } = get();
+
+        let newQuestions = data.filter(t => selectedCategories.includes(t.category));
+        shuffle(newQuestions);
+        newQuestions = newQuestions.slice(0, 5);
+
         set({
             gameState: States.RunningExercise,
             modulsActivated: false,
-            selectedTranslations: data.filter(t => selectedCategories.includes(t.category)).slice(0, 5),
-            totalTranslations: 5,
+            selectedTranslations: newQuestions,
+            totalTranslations: newQuestions.length,
             correctAnswers: 0,
             completedTranslations: -1,
         });
     },
 
     checkAnswer: () => {
+        // Check if the answer is correct
+        const { currentTranslation, exerciseType } = get();
+
+        if (exerciseType === ExerciseType.TranslateSentenceExercise) {
+
+            const levenshtein = (a: string, b: string): number => {
+                if (a === "" || b === "") return 50;
+                const matrix = Array.from({ length: a.length })
+                    .map(() => Array.from({ length: b.length })
+                        .map(() => 0))
+                for (let i = 0; i < a.length; i++) matrix[i][0] = i
+                for (let i = 0; i < b.length; i++) matrix[0][i] = i
+                for (let j = 0; j < b.length; j++)
+                    for (let i = 0; i < a.length; i++)
+                        matrix[i][j] = Math.min(
+                            (i === 0 ? 0 : matrix[i - 1][j]) + 1,
+                            (j === 0 ? 0 : matrix[i][j - 1]) + 1,
+                            (i === 0 || j === 0 ? 0 : matrix[i - 1][j - 1]) + (a[i] === b[j] ? 0 : 1)
+                        )
+                return matrix[a.length - 1][b.length - 1]
+            }
+
+            const normalize = (input: string) => {
+                let res = input.trim();
+                res = res.toLowerCase();
+                res = res.replaceAll(/\s+/g, " ");
+                return res;
+            }
+
+            const areEqual = (a: string, b: string) => {
+                const dist = levenshtein(a, b);
+                if (dist === 0) return AnswerScore.RIGHT;
+                else if (dist <= 2) return AnswerScore.ALMOST;
+                return AnswerScore.WRONG;
+            }
+
+            let a = normalize((document.getElementById("answer") as HTMLTextAreaElement).value);
+            let b = normalize(currentTranslation?.english ?? " ");
+
+            set({ answerScore: areEqual(a, b) });
+        }
+
         set({ gameState: States.CheckingAnswer })
     },
 
@@ -99,11 +150,17 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
             return;
         }
 
+        // Clear textearea
+        const textarea = document.getElementById("answer") as HTMLTextAreaElement;
+        if (textarea) {
+            textarea.value = "";
+        }
+
         set({
             exerciseType: Math.random() < 0.5 ? ExerciseType.GuessMeaningExercise : ExerciseType.TranslateSentenceExercise,
             completedTranslations: completedTranslations + 1,
             currentTranslation: selectedTranslations.pop(),
-            gameState: States.RunningExercise
+            gameState: States.RunningExercise,
         })
     },
 
@@ -130,6 +187,21 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
         });
         playNegative();
         nextExercise();
+    },
+
+    addConditional: (): void => {
+        const { answerScore, addPositive, addNegative } = get();
+        switch (answerScore) {
+            case AnswerScore.RIGHT:
+            case AnswerScore.ALMOST:
+                addPositive();
+                break;
+            case AnswerScore.WRONG:
+                addNegative();
+                break;
+            default:
+                break;
+        }
     },
 
     playPositive: (): void => { get().volumeActivated && new Audio("correct.wav").play() },

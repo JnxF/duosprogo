@@ -10,6 +10,7 @@ export default function Modules() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const activated = generalState(state => state.modulsActivated);
     const toggleCategory = generalState(state => state.toggleCategory);
+    const selectedCategories = generalState(state => state.selectedCategories);
 
     return <>
         {Object.entries(organizedTranslations).map(([modul, categories]) => (
@@ -21,6 +22,7 @@ export default function Modules() {
                             isDisabled={!activated}
                             size="sm"
                             key={category}
+                            {...selectedCategories.includes(category) ? { "defaultIsChecked": true } : undefined}
                             onChange={(e) => toggleCategory(category)}
                         >
                             {category.replaceAll("_", " ")}
