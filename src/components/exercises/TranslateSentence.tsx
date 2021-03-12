@@ -7,9 +7,9 @@ import SentenceDisplayer from "../helpers/SentenceDisplayer";
 import GeneralExercise from "./GeneralExercise";
 
 export default function TranslateSentence() {
-    const gameState = generalState(state => state.gameState);
-    const danish = generalState(state => state.currentTranslation?.danish);
-    const checkAnswer = generalState(state => state.checkAnswer);
+    const gameState = generalState(_ => _.gameState);
+    const danish = generalState(_ => _.currentTranslation?.danish);
+    const checkAnswer = generalState(_ => _.checkAnswer);
     return (
         <GeneralExercise title="Oversæt denne sætning">
             <SentenceDisplayer isDanish={true}>{danish ?? ""}</SentenceDisplayer>
@@ -21,7 +21,7 @@ export default function TranslateSentence() {
                 autoComplete="false"
                 id="answer"
                 onKeyPress={(e) => {
-                    if (e.code === "Enter") {
+                    if (e.key === "Enter") {
                         checkAnswer();
                     }
                 }}
@@ -36,9 +36,9 @@ export default function TranslateSentence() {
 }
 
 function NextStep() {
-    const gameState = generalState(state => state.gameState);
-    const answerScore = generalState(state => state.answerScore);
-    const addPositive = generalState(state => state.addPositive)
+    const gameState = generalState(_ => _.gameState);
+    const answerScore = generalState(_ => _.answerScore);
+    const addPositive = generalState(_ => _.addPositive)
 
     return (
         <HStack mt={5}>
@@ -46,7 +46,7 @@ function NextStep() {
             { (gameState === States.CheckingAnswer && answerScore === AnswerScore.WRONG) && <Button size="lg" colorScheme="green" onClick={addPositive}>
                 Mit svar var korrekt
             </Button>}
-            <Button size="lg" colorScheme="blue" onClick={gameState === States.RunningExercise ? generalState(state => state.checkAnswer) : generalState(state => state.addConditional)}>
+            <Button size="lg" colorScheme="blue" onClick={gameState === States.RunningExercise ? generalState(_ => _.checkAnswer) : generalState(_ => _.addConditional)}>
                 {gameState === States.RunningExercise ? "Tjek" : "Fortsæt"}
             </Button>
         </HStack>
@@ -54,7 +54,7 @@ function NextStep() {
 }
 
 function Feedback() {
-    const english = generalState(state => state.currentTranslation?.english);
+    const english = generalState(_ => _.currentTranslation?.english);
     const answerScore = generalState(_ => _.answerScore);
 
     const right = (

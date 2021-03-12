@@ -9,8 +9,8 @@ import Summary from "./exercises/Summary";
 import TranslateSentence from "./exercises/TranslateSentence";
 
 export default function Main() {
-    const exerciseType = generalState(state => state.exerciseType);
-    const gameState = generalState(state => state.gameState);
+    const exerciseType = generalState(_ => _.exerciseType);
+    const gameState = generalState(_ => _.gameState);
 
     let content: JSX.Element = <></>;
 

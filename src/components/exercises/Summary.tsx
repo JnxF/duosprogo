@@ -5,7 +5,7 @@ import { generalState } from "../../state/state"
 import GeneralExercise from "./GeneralExercise"
 
 export default function Summary() {
-    let wrongAnswers = generalState(state => state.wrongAnswers)
+    let wrongAnswers = generalState(_ => _.wrongAnswers)
     let feedback = (
         <Alert status="success" variant="solid" >
             <AlertIcon />
@@ -32,11 +32,11 @@ export default function Summary() {
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {generalState(state => state.wrongTranslations).map(translation => (
+                    {generalState(_ => _.wrongTranslations).map(translation => (
                         <Tr>
                             <Td>{translation.danish}</Td>
                             <Td >{translation.english}</Td>
-                            <Td>{translation.category.replaceAll("_", " ")}</Td>
+                            <Td>{translation.category.replace(/_/g, " ")}</Td>
                         </Tr>
                     ))}
                 </Tbody>
@@ -52,7 +52,7 @@ export default function Summary() {
             {feedback}
             <HStack mt={8}>
                 <Spacer />
-                <Button size="lg" colorScheme="blue" rightIcon={<ArrowForwardIcon />} onClick={generalState(state => state.reset)}>Starte igen</Button>
+                <Button size="lg" colorScheme="blue" rightIcon={<ArrowForwardIcon />} onClick={generalState(_ => _.reset)}>Starte igen</Button>
             </HStack>
         </GeneralExercise>
     )

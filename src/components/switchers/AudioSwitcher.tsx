@@ -9,8 +9,8 @@ import { generalState } from "../../state/state"
 type AudioSwitcherProps = Omit<IconButtonProps, "aria-label">
 
 export const AudioSwitcher: React.FC<AudioSwitcherProps> = (props) => {
-    const toggleVolume = generalState(state => state.toggleVolume);
-    const volumeActivated = generalState(state => state.volumeActivated);
+    const toggleVolume = generalState(_ => _.toggleVolume);
+    const volumeActivated = generalState(_ => _.volumeActivated);
 
     return (
         <IconButton

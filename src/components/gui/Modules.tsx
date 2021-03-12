@@ -1,34 +1,35 @@
 import { Button } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { ArrowForwardIcon, ExternalLinkIcon } from "@chakra-ui/icons";
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Badge, Box, Checkbox, Heading, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, Tbody, Td, Text, Tr, VStack } from "@chakra-ui/react";
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Badge, Box, Checkbox, Heading, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Table, Tbody, Td, Text, Tr } from "@chakra-ui/react";
 import React from "react";
 import { organizedTranslations } from "../../Data";
 import { generalState } from "../../state/state";
 
 export default function Modules() {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const activated = generalState(state => state.modulsActivated);
-    const toggleCategory = generalState(state => state.toggleCategory);
-    const selectedCategories = generalState(state => state.selectedCategories);
+    const activated = generalState(_ => _.modulsActivated);
+    const toggleCategory = generalState(_ => _.toggleCategory);
+    const selectedCategories = generalState(_ => _.selectedCategories);
 
     return <>
         {Object.entries(organizedTranslations).map(([modul, categories]) => (
             <Box mb="5">
                 <Heading fontSize="md" mb="2">Modul {modul}</Heading>
-                <VStack align={"left"} pl={3} borderLeft={"2px"} borderColor={"gray.300"} spacing={1}>
+                <Stack align={"left"} pl={{ xs: 2, md: 3 }} borderLeft={"2px"} borderColor={"gray.300"} spacing={{ sm: 0, md: 1 }}>
                     {Object.entries(categories).map(([category]) =>
                         <Checkbox
                             isDisabled={!activated}
                             size="sm"
+                            pl={2}
                             key={category}
                             {...selectedCategories.includes(category) ? { "defaultIsChecked": true } : undefined}
                             onChange={(e) => toggleCategory(category)}
                         >
-                            {category.replaceAll("_", " ")}
+                            {category.replace(/_/g, " ")}
                         </Checkbox>
                     )}
-                </VStack>
+                </Stack>
             </Box>
         ))
         }
@@ -63,7 +64,7 @@ function GlosarModal({ isOpen, onClose }: any) {
                                     {Object.entries(categories).map(([category, translations]) =>
                                         <>
                                             <Heading size="sm">
-                                                {category.replaceAll("_", " ")}
+                                                {category.replace(/_/g, " ")}
                                                 <Badge ml={3} variant="solid" colorScheme="blue">{translations.length}</Badge>
                                             </Heading>
                                             <Table size="sm" mt={3} mb={7} variant="striped" colorScheme="blackAlpha">

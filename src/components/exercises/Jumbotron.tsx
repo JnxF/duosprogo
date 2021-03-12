@@ -5,9 +5,9 @@ import { generalState } from "../../state/state";
 
 export default function Jumbotron({ onClick }: any) {
     const toast = useToast();
-    const startGame = generalState(state => state.startGame);
-    const nextExercise = generalState(state => state.nextExercise);
-    const selectedCategories = generalState(state => state.selectedCategories);
+    const startGame = generalState(_ => _.startGame);
+    const nextExercise = generalState(_ => _.nextExercise);
+    const selectedCategories = generalState(_ => _.selectedCategories);
 
     return <>
         <Heading mb={4} size="2xl" as="h1">🇩🇰 Lære dansk!</Heading>
