@@ -4,8 +4,8 @@ import { AudioSwitcher } from "../switchers/AudioSwitcher";
 import { ColorModeSwitcher } from "../switchers/ColorModeSwitcher";
 
 export default function Header() {
-    return <Flex p={5} pl={20} pr={20}>
-        <Box p="2">
+    return <Flex p={5}>
+        <Box>
             <Heading size="lg" color={"gray.600"}>Duosprogo</Heading>
         </Box>
         <Spacer />
