@@ -32,7 +32,6 @@ export function App() {
             right={generalState(state => state.correctAnswers)}
             wrong={generalState(state => state.wrongAnswers)}
           />
-          <p>{generalState(state => state.gameState)}</p>
         </Box>
 
       </Flex>
