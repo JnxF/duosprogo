@@ -116,7 +116,7 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
             const normalize = (input: string) => {
                 let res = input.trim();
                 res = res.toLowerCase();
-                res = res.replaceAll(/\s+/g, " ");
+                res = res.replace(/\s+/g, " ");
                 return res;
             }
 
@@ -207,8 +207,8 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
         }
     },
 
-    playPositive: (): void => { get().volumeActivated && new Audio("correct.wav").play() },
-    playNegative: (): void => { get().volumeActivated && new Audio("wrong.wav").play() },
+    playPositive: (): void => { get().volumeActivated && new Audio("/danish/correct.wav").play() },
+    playNegative: (): void => { get().volumeActivated && new Audio("/danish/wrong.wav").play() },
 
     toggleCategory: (category: string): void => {
         let { selectedCategories } = get();
