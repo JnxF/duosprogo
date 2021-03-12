@@ -98,6 +98,11 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
 
             const levenshtein = (a: string, b: string): number => {
                 if (a === "" || b === "") return 50;
+
+                const maxSize = Math.max(a.length, b.length);
+                a = a.padStart(maxSize, " ")
+                b = b.padStart(maxSize, " ")
+
                 const matrix = Array.from({ length: a.length })
                     .map(() => Array.from({ length: b.length })
                         .map(() => 0))
