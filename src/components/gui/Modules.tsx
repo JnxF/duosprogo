@@ -14,7 +14,7 @@ export default function Modules() {
 
     return <>
         {Object.entries(organizedTranslations).map(([modul, categories]) => (
-            <Box mb="5">
+            <Box mb="5" key={modul}>
                 <Heading fontSize="md" mb="2">Modul {modul}</Heading>
                 <Stack align={"left"} pl={{ xs: 2, md: 3 }} borderLeft={"2px"} borderColor={"gray.300"} spacing={{ sm: 0, md: 1 }}>
                     {Object.entries(categories).map(([category]) =>
@@ -53,7 +53,7 @@ function GlosarModal({ isOpen, onClose }: any) {
                     </Text>
                     <Accordion allowToggle>
                         {Object.entries(organizedTranslations).map(([modul, categories]) =>
-                            <AccordionItem>
+                            <AccordionItem key={modul}>
                                 <AccordionButton>
                                     <Box flex="1" textAlign="left">
                                         <Heading size="md">Modul {modul}</Heading>
@@ -62,7 +62,7 @@ function GlosarModal({ isOpen, onClose }: any) {
                                 </AccordionButton>
                                 <AccordionPanel pb={4} ml={5}>
                                     {Object.entries(categories).map(([category, translations]) =>
-                                        <>
+                                        <Box key={category}>
                                             <Heading size="sm">
                                                 {category.replace(/_/g, " ")}
                                                 <Badge ml={3} variant="solid" colorScheme="blue">{translations.length}</Badge>
@@ -70,14 +70,14 @@ function GlosarModal({ isOpen, onClose }: any) {
                                             <Table size="sm" mt={3} mb={7} variant="striped" colorScheme="blackAlpha">
                                                 <Tbody>
                                                     {translations.map(translation => (
-                                                        <Tr>
-                                                            <Td w={"50%"}>{translation.danish}</Td>
-                                                            <Td w={"50%"}>{translation.english}</Td>
+                                                        <Tr key={translation.danish + translation.english}>
+                                                            <Td key={translation.danish} w={"50%"}>{translation.danish}</Td>
+                                                            <Td key={translation.english} w={"50%"}>{translation.english}</Td>
                                                         </Tr>
                                                     ))}
                                                 </Tbody>
                                             </Table>
-                                        </>
+                                        </Box>
                                     )}
                                 </AccordionPanel>
                             </AccordionItem>
