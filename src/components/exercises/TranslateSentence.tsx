@@ -22,13 +22,20 @@ export default function TranslateSentence() {
                 id="answer"
                 onKeyPress={(e) => {
                     if (e.key === "Enter") {
+                        e.preventDefault();
                         checkAnswer();
+                        document.getElementById("answer")?.blur()
                     }
                 }}
                 autoFocus
                 fontSize="xl"
                 mt={8}
             />
+            <HStack mt={2}>
+                <Button size="sm" variant="outline" onClick={() => (document.getElementById("answer") as HTMLTextAreaElement).value += "æ"} isDisabled={gameState === States.CheckingAnswer}>æ</Button>
+                <Button size="sm" variant="outline" onClick={() => (document.getElementById("answer") as HTMLTextAreaElement).value += "ø"} isDisabled={gameState === States.CheckingAnswer}>ø</Button>
+                <Button size="sm" variant="outline" onClick={() => (document.getElementById("answer") as HTMLTextAreaElement).value += "å"} isDisabled={gameState === States.CheckingAnswer}>å</Button>
+            </HStack>
             <NextStep />
             {gameState === States.CheckingAnswer && <Feedback />}
         </GeneralExercise>
@@ -46,7 +53,7 @@ function NextStep() {
             { (gameState === States.CheckingAnswer && answerScore === AnswerScore.WRONG) && <Button size="md" colorScheme="green" onClick={addPositive}>
                 Mit svar var korrekt
             </Button>}
-            <Button size="md" colorScheme="blue" onClick={gameState === States.RunningExercise ? generalState(_ => _.checkAnswer) : generalState(_ => _.addConditional)}>
+            <Button size="md" colorScheme="blue" onClick={gameState === States.RunningExercise ? generalState(_ => _.checkAnswer) : generalState(_ => _.addConditional)} className={"nextStep"}>
                 {gameState === States.RunningExercise ? "Tjek" : "Fortsæt"}
             </Button>
         </HStack>

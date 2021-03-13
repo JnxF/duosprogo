@@ -24,7 +24,7 @@ function ShowAnswerButton() {
     return (
         <HStack mt={8}>
             <Spacer />
-            <Button size="md" colorScheme="blue" onClick={checkAnswer}>Vis</Button>
+            <Button size="md" colorScheme="blue" onClick={checkAnswer} className={"nextStep"}>Vis</Button>
         </HStack>
     )
 }
@@ -42,7 +42,7 @@ function RightOrWrong() {
             <HStack mt={8}>
                 <Spacer />
                 <Button size="md" colorScheme="red" onClick={addNegative}>Jeg gjorde ikke</Button>
-                <Button size="md" colorScheme="green" onClick={addPositive}>Jeg gjorde</Button>
+                <Button size="md" colorScheme="green" onClick={addPositive} className={"nextStep"}>Jeg gjorde</Button>
             </HStack>
         </Box>
     )

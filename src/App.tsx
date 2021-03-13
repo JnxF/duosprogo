@@ -1,5 +1,5 @@
 import { Box, ChakraProvider, Flex, theme } from "@chakra-ui/react";
-import * as React from "react";
+import { useEffect } from "react";
 import './App.scss';
 import Footer from "./components/gui/Footer";
 import Header from "./components/gui/Header";
@@ -9,6 +9,22 @@ import Main from "./components/Main";
 import { generalState } from "./state/state";
 
 export function App() {
+
+  // When clicking enter, 
+  const kp = (e: KeyboardEvent) => {
+    const elementIsBody = (e.target as any).localName === "body";
+    const keyIsNext = ["Enter", "Space"].includes(e.code);
+    if (elementIsBody && keyIsNext) {
+      const nexts = document.getElementsByClassName("nextStep");
+      Array.prototype.forEach.call(nexts, (next) => next.click());
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keypress', kp);
+    return () => { window.removeEventListener('keypress', kp); }
+  })
+
   return (
     <ChakraProvider theme={theme}>
       <Box minHeight={"100vh"} marginBottom={"-72px"}>

@@ -30,7 +30,7 @@ export default function Jumbotron({ onClick }: any) {
                 return;
             }
             nextExercise();
-        }} rightIcon={<ArrowForwardIcon />} size="md" colorScheme="blue" variant="solid" mt="24px">
+        }} rightIcon={<ArrowForwardIcon />} size="md" colorScheme="blue" variant="solid" mt="24px" className={"nextStep"}>
             Start spillet
         </Button>
     </>
