@@ -1,5 +1,4 @@
 import { Badge, Text, Tooltip } from "@chakra-ui/react";
-import React from "react";
 import { data } from "../../Data";
 
 export default function SentenceDisplayer({ children, isDanish }: { children: string, isDanish: boolean }) {

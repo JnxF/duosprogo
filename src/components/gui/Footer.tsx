@@ -1,5 +1,4 @@
 import { Box, Link, Text } from "@chakra-ui/layout";
-import React from "react";
 
 export default function Footer() {
     return (

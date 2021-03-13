@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/layout";
-import React from "react";
 import { ExerciseType } from "../state/ExerciseType";
 import { generalState } from "../state/state";
 import { States } from "../state/States";

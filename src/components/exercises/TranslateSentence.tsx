@@ -1,5 +1,4 @@
 import { Alert, AlertDescription, AlertIcon, AlertTitle, Button, HStack, Spacer, Text, Textarea } from "@chakra-ui/react";
-import React from "react";
 import { AnswerScore } from "../../state/AnswerScore";
 import { generalState } from "../../state/state";
 import { States } from "../../state/States";

@@ -1,7 +1,6 @@
 import { Box, Flex, Stack } from "@chakra-ui/layout";
 import { CircularProgress } from "@chakra-ui/progress";
 import { Center, CircularProgressLabel } from "@chakra-ui/react";
-import React from "react";
 
 export function Score({ right, wrong }: { right: number, wrong: number }) {
     let total = right + wrong;

@@ -1,5 +1,4 @@
 import { Box, Flex, Heading, Spacer } from "@chakra-ui/layout";
-import React from "react";
 import { AudioSwitcher } from "../switchers/AudioSwitcher";
 import { ColorModeSwitcher } from "../switchers/ColorModeSwitcher";
 
