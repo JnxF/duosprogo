@@ -1,10 +1,8 @@
 import { Box, Heading } from "@chakra-ui/react";
-import ProgressGame from "../helpers/ProgressGame";
 
-export default function GeneralExercise({ children, title, showBar = true }: { children: any, title: string, showBar?: boolean }) {
+export default function GeneralExercise({ children, title }: { children: any, title: string }) {
     return (
         <>
-            {showBar ? <ProgressGame /> : <></>}
             <Heading size="lg" mb={3}>
                 {title}
             </Heading>
