@@ -1,4 +1,5 @@
 export enum ExerciseType {
-    GuessMeaningExercise = "GuessMeaningExercise",
-    TranslateSentenceExercise = "TranslateSentenceExercise"
+    GuessMeaningExercise,
+    TranslateSentenceExercise,
+    SpellingExercise
 }

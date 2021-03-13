@@ -130,9 +130,7 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
         const { totalTranslations } = get();
 
         if (completedTranslations === totalTranslations - 1) {
-            set({
-                gameState: States.FinalSummary
-            })
+            set({ gameState: States.FinalSummary })
             return;
         }
 
@@ -142,11 +140,39 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
             textarea.value = "";
         }
 
+        // New exercise
+        const currentTranslation = selectedTranslations.pop();
+
+        // Determine the exercise type
+        let exerciseType = null;
+        const isOneWord = !(currentTranslation?.danish ?? "").includes(" ");
+
+        // One word
+        if (isOneWord) {
+            const p = Math.random()
+            if (p <= .5) {
+                exerciseType = ExerciseType.SpellingExercise;
+            } else if (p <= .75) {
+                exerciseType = ExerciseType.TranslateSentenceExercise;
+            } else {
+                exerciseType = ExerciseType.GuessMeaningExercise;
+            }
+        }
+        // Sentence
+        else {
+            const p = Math.random()
+            if (p <= .7) {
+                exerciseType = ExerciseType.TranslateSentenceExercise
+            } else {
+                exerciseType = ExerciseType.GuessMeaningExercise;
+            }
+        }
+
         set({
-            exerciseType: Math.random() < 0.5 ? ExerciseType.GuessMeaningExercise : ExerciseType.TranslateSentenceExercise,
-            completedTranslations: completedTranslations + 1,
-            currentTranslation: selectedTranslations.pop(),
             gameState: States.RunningExercise,
+            completedTranslations: completedTranslations + 1,
+            currentTranslation,
+            exerciseType,
         })
     },
 

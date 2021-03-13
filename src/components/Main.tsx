@@ -4,6 +4,7 @@ import { generalState } from "../state/state";
 import { States } from "../state/States";
 import GuessMeaning from "./exercises/GuessMeaning";
 import Jumbotron from "./exercises/Jumbotron";
+import { Spelling } from "./exercises/Spelling";
 import Summary from "./exercises/Summary";
 import TranslateSentence from "./exercises/TranslateSentence";
 import ProgressGame from "./helpers/ProgressGame";
@@ -20,9 +21,17 @@ export default function Main() {
             break;
         case States.RunningExercise:
         case States.CheckingAnswer:
-            content = exerciseType === ExerciseType.GuessMeaningExercise
-                ? <><ProgressGame /><GuessMeaning /></>
-                : <><ProgressGame /><TranslateSentence /></>
+            switch (exerciseType) {
+                case ExerciseType.GuessMeaningExercise:
+                    content = <><ProgressGame /><GuessMeaning /></>;
+                    break;
+                case ExerciseType.TranslateSentenceExercise:
+                    content = <><ProgressGame /><TranslateSentence /></>;
+                    break;
+                case ExerciseType.SpellingExercise:
+                    content = <><ProgressGame /><Spelling /></>
+                    break;
+            }
             break;
         case States.FinalSummary:
             content = <Summary />
