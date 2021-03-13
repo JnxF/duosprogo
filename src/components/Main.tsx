@@ -28,7 +28,7 @@ export default function Main() {
     }
 
     return (<>
-        <Box p={8} borderWidth="2px" borderRadius="lg">
+        <Box p={5} borderWidth="2px" borderRadius="lg">
             {content}
         </Box>
     </>)
