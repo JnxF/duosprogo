@@ -43,7 +43,7 @@ export default function TranslateSentence() {
                 <Button p={1} size="sm" variant="outline" onClick={() => addLetter('å')} isDisabled={gameState === States.CheckingAnswer}>å</Button>
             </HStack>
             <NextStep />
-            {gameState === States.CheckingAnswer && <Feedback />}
+            {gameState === States.CheckingAnswer && <TranslateSentenceFeedback />}
         </GeneralExercise>
     )
 }
@@ -66,7 +66,7 @@ function NextStep() {
     )
 }
 
-function Feedback() {
+function TranslateSentenceFeedback() {
     const english = generalState(_ => _.currentTranslation?.english);
     const answerScore = generalState(_ => _.answerScore);
 
