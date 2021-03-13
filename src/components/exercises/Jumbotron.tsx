@@ -10,11 +10,11 @@ export default function Jumbotron({ onClick }: any) {
     const selectedCategories = generalState(_ => _.selectedCategories);
 
     return <>
-        <Heading mb={4} size="2xl" as="h1">🇩🇰 Lære dansk!</Heading>
-        <Text fontSize="2xl">
+        <Heading mb={4} size="xl" as="h1">🇩🇰 Lære dansk!</Heading>
+        <Text fontSize="xl">
             Vælg de emner til venstre, du vil øve på, og klik på knappen for at starte
         </Text>
-        <Text fontSize="xl" mt="2">
+        <Text fontSize="lg" mt="2">
             Select the topics on the left that you want to practice on and click the button to start
         </Text>
         <Button onClick={() => {
@@ -30,7 +30,7 @@ export default function Jumbotron({ onClick }: any) {
                 return;
             }
             nextExercise();
-        }} rightIcon={<ArrowForwardIcon />} size="lg" colorScheme="blue" variant="solid" mt="24px">
+        }} rightIcon={<ArrowForwardIcon />} size="md" colorScheme="blue" variant="solid" mt="24px">
             Start spillet
         </Button>
     </>

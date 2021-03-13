@@ -43,10 +43,10 @@ function NextStep() {
     return (
         <HStack mt={5}>
             <Spacer />
-            { (gameState === States.CheckingAnswer && answerScore === AnswerScore.WRONG) && <Button size="lg" colorScheme="green" onClick={addPositive}>
+            { (gameState === States.CheckingAnswer && answerScore === AnswerScore.WRONG) && <Button size="md" colorScheme="green" onClick={addPositive}>
                 Mit svar var korrekt
             </Button>}
-            <Button size="lg" colorScheme="blue" onClick={gameState === States.RunningExercise ? generalState(_ => _.checkAnswer) : generalState(_ => _.addConditional)}>
+            <Button size="md" colorScheme="blue" onClick={gameState === States.RunningExercise ? generalState(_ => _.checkAnswer) : generalState(_ => _.addConditional)}>
                 {gameState === States.RunningExercise ? "Tjek" : "Fortsæt"}
             </Button>
         </HStack>

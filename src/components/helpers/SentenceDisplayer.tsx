@@ -4,7 +4,7 @@ import { data } from "../../Data";
 
 export default function SentenceDisplayer({ children, isDanish }: { children: string, isDanish: boolean }) {
     return (
-        <Text fontSize="2xl" className={"sentence"}>
+        <Text fontSize="xl" className={"sentence"}>
             {children.split(" ").map(word => {
                 const toLower = word.toLowerCase();
                 const objectiveWords = isDanish ? data.filter(t => t.danish.toLowerCase() === toLower).map(t => t.english)
@@ -23,7 +23,7 @@ export default function SentenceDisplayer({ children, isDanish }: { children: st
 
 
             })}
-            <Badge variant="outline" ml="4" fontSize="0.8em" colorScheme="gray">
+            <Badge variant="outline" ml="4" fontSize="0.8rem" colorScheme="gray">
                 {isDanish ? "DK" : "EN"}
             </Badge>
         </Text >

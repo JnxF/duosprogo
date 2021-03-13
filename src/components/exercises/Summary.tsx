@@ -52,7 +52,7 @@ export default function Summary() {
             {feedback}
             <HStack mt={8}>
                 <Spacer />
-                <Button size="lg" colorScheme="blue" rightIcon={<ArrowForwardIcon />} onClick={generalState(_ => _.reset)}>Starte igen</Button>
+                <Button size="md" colorScheme="blue" rightIcon={<ArrowForwardIcon />} onClick={generalState(_ => _.reset)}>Starte igen</Button>
             </HStack>
         </GeneralExercise>
     )

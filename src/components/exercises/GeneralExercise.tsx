@@ -6,7 +6,7 @@ export default function GeneralExercise({ children, title, showBar = true }: { c
     return (
         <>
             {showBar ? <ProgressGame /> : <></>}
-            <Heading size="xl" mb={3}>
+            <Heading size="lg" mb={3}>
                 {title}
             </Heading>
 
