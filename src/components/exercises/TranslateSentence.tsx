@@ -1,4 +1,5 @@
 import { Alert, AlertDescription, AlertIcon, AlertTitle, Button, HStack, Spacer, Text, Textarea } from "@chakra-ui/react";
+import { useRef } from "react";
 import { AnswerScore } from "../../state/AnswerScore";
 import { generalState } from "../../state/state";
 import { States } from "../../state/States";
@@ -9,6 +10,11 @@ export default function TranslateSentence() {
     const gameState = generalState(_ => _.gameState);
     const danish = generalState(_ => _.currentTranslation?.danish);
     const checkAnswer = generalState(_ => _.checkAnswer);
+    const textarea = useRef(null);
+    const addLetter = (letter: string) => {
+        ((textarea.current)! as HTMLTextAreaElement).value += letter;
+    }
+
     return (
         <GeneralExercise title="Oversæt denne sætning">
             <SentenceDisplayer isDanish={true}>{danish ?? ""}</SentenceDisplayer>
@@ -19,11 +25,12 @@ export default function TranslateSentence() {
                 data-gramm_editor="false"
                 autoComplete="false"
                 id="answer"
+                ref={textarea}
                 onKeyPress={(e) => {
                     if (e.key === "Enter") {
                         e.preventDefault();
                         checkAnswer();
-                        document.getElementById("answer")?.blur()
+                        ((textarea.current)! as HTMLTextAreaElement).blur();
                     }
                 }}
                 autoFocus
@@ -31,9 +38,9 @@ export default function TranslateSentence() {
                 mt={8}
             />
             <HStack mt={2}>
-                <Button size="sm" variant="outline" onClick={() => (document.getElementById("answer") as HTMLTextAreaElement).value += "æ"} isDisabled={gameState === States.CheckingAnswer}>æ</Button>
-                <Button size="sm" variant="outline" onClick={() => (document.getElementById("answer") as HTMLTextAreaElement).value += "ø"} isDisabled={gameState === States.CheckingAnswer}>ø</Button>
-                <Button size="sm" variant="outline" onClick={() => (document.getElementById("answer") as HTMLTextAreaElement).value += "å"} isDisabled={gameState === States.CheckingAnswer}>å</Button>
+                <Button p={1} size="sm" variant="outline" onClick={() => addLetter('æ')} isDisabled={gameState === States.CheckingAnswer}>æ</Button>
+                <Button p={1} size="sm" variant="outline" onClick={() => addLetter('ø')} isDisabled={gameState === States.CheckingAnswer}>ø</Button>
+                <Button p={1} size="sm" variant="outline" onClick={() => addLetter('å')} isDisabled={gameState === States.CheckingAnswer}>å</Button>
             </HStack>
             <NextStep />
             {gameState === States.CheckingAnswer && <Feedback />}
