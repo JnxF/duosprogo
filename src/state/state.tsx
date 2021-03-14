@@ -46,7 +46,7 @@ export type GameState = {
     playNegative: () => void;
 
     // Categories
-    toggleCategory: (category: string) => void;
+    setCategory: (category: string, activated: boolean) => void;
 
     // Reset
     reset: () => void;
@@ -96,7 +96,7 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
 
     checkAnswerTranslateSentence: (textarea) => {
         // Check if the answer is correct
-        const { currentTranslation, exerciseType } = get();
+        const { currentTranslation } = get();
 
         const normalize = (input: string) => {
             let res = input.trim();
@@ -115,9 +115,10 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
         let a = normalize(((textarea.current)! as HTMLTextAreaElement).value);
         let b = normalize(currentTranslation?.english ?? " ");
 
-        set({ answerScore: areEqual(a, b) });
-
-        set({ gameState: States.CheckingAnswer })
+        set({
+            answerScore: areEqual(a, b),
+            gameState: States.CheckingAnswer
+        })
     },
 
     checkAnswerGuessMeaning: () => {
@@ -227,9 +228,9 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
     playPositive: (): void => { get().volumeActivated && new Audio("/danish/correct.wav").play() },
     playNegative: (): void => { get().volumeActivated && new Audio("/danish/wrong.wav").play() },
 
-    toggleCategory: (category: string): void => {
+    setCategory: (category: string, activated: boolean): void => {
         let { selectedCategories } = get();
-        if (selectedCategories.includes(category)) {
+        if (!activated) {
             selectedCategories = selectedCategories.filter(c => c !== category);
         } else {
             selectedCategories = selectedCategories.concat(category)

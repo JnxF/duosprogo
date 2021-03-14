@@ -43,7 +43,7 @@ export function App() {
         {/* Main */}
         <Flex px={5} mb={10} alignItems={"flex-start"} justifyContent={"space-evenly"} direction={["column", null, "row"]}>
           {/* Left */}
-          <Box order={[2, 2, 0]} minWidth={"260px"} p={5} borderWidth="2px" borderRadius="lg" width={["100%", "100%", "auto"]} mb={4}>
+          <Box order={[2, 2, 0]} p={5} borderWidth="2px" borderRadius="lg" width={["100%", "100%", "auto"]} mb={4}>
             <Modules />
           </Box>
 

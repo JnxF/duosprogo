@@ -1,10 +1,13 @@
 import { Button } from "@chakra-ui/button";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Badge, Box, Heading, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, Tbody, Td, Text, Tr } from "@chakra-ui/react";
+import { ArrowForwardIcon, ExternalLinkIcon } from "@chakra-ui/icons";
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Badge, Box, Heading, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, Tbody, Td, Text, Tr, useDisclosure } from "@chakra-ui/react";
 import { organizedTranslations } from "../../Data";
 
-export function GlosarModal({ isOpen, onClose }: any) {
-    return (
+export function GlosarModal() {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
+    return (<>
+        <Button size="sm" onClick={onOpen} rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline">Viser glosar</Button>
         <Modal isOpen={isOpen} onClose={onClose} size="lg">
             <ModalOverlay />
             <ModalContent>
@@ -64,5 +67,5 @@ export function GlosarModal({ isOpen, onClose }: any) {
                 </ModalFooter>
             </ModalContent>
         </Modal>
-    );
+    </>);
 }
