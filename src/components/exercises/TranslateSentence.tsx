@@ -9,7 +9,7 @@ import GeneralExercise from "./GeneralExercise";
 export default function TranslateSentence() {
     const gameState = generalState(_ => _.gameState);
     const danish = generalState(_ => _.currentTranslation?.danish);
-    const checkAnswer = generalState(_ => _.checkAnswer);
+    const checkAnswer = generalState(_ => _.checkAnswerTranslateSentence);
     const textarea = useRef(null);
     const addLetter = (letter: string) => {
         ((textarea.current)! as HTMLTextAreaElement).value += letter;
@@ -35,7 +35,7 @@ export default function TranslateSentence() {
                 }}
                 autoFocus
                 fontSize="xl"
-                mt={8}
+                mt={4}
             />
             <HStack mt={2}>
                 <Button p={1} size="sm" variant="outline" onClick={() => addLetter('æ')} isDisabled={gameState === States.CheckingAnswer}>æ</Button>
@@ -54,12 +54,12 @@ function NextStep() {
     const addPositive = generalState(_ => _.addPositive)
 
     return (
-        <HStack mt={5}>
+        <HStack mt={4}>
             <Spacer />
             { (gameState === States.CheckingAnswer && answerScore === AnswerScore.WRONG) && <Button size="md" colorScheme="green" onClick={addPositive}>
                 Mit svar var korrekt
             </Button>}
-            <Button size="md" colorScheme="blue" onClick={gameState === States.RunningExercise ? generalState(_ => _.checkAnswer) : generalState(_ => _.addConditional)} className={"nextStep"}>
+            <Button size="md" colorScheme="blue" onClick={gameState === States.RunningExercise ? generalState(_ => _.checkAnswerTranslateSentence) : generalState(_ => _.addConditional)} className={"nextStep"}>
                 {gameState === States.RunningExercise ? "Tjek" : "Fortsæt"}
             </Button>
         </HStack>
@@ -71,7 +71,7 @@ function TranslateSentenceFeedback() {
     const answerScore = generalState(_ => _.answerScore);
 
     const right = (
-        <Alert status="success" variant="subtle" mt={"8"} p={5}>
+        <Alert status="success" variant="subtle" mt={"4"} p={5}>
             <AlertIcon boxSize="40px" mr={0} />
             <AlertTitle mt={1} mb={1} ml={5} fontSize="xl">
                 Du har ret!
@@ -80,7 +80,7 @@ function TranslateSentenceFeedback() {
     )
 
     const wrong = (
-        <Alert status="error" variant="subtle" mt={"8"} px={5} py={7}>
+        <Alert status="error" variant="subtle" mt={"4"} px={5} py={7}>
             <AlertIcon boxSize="40px" mr={0} />
             <AlertTitle mt={1} mb={1} ml={5} fontSize="xl">
                 Oops!
@@ -93,7 +93,7 @@ function TranslateSentenceFeedback() {
     )
 
     const almost = (
-        <Alert status="success" variant="subtle" mt={"8"} px={5} py={7}>
+        <Alert status="success" variant="subtle" mt={"4"} px={5} py={7}>
             <AlertIcon boxSize="40px" mr={0} />
             <AlertTitle mt={1} mb={1} ml={5} fontSize="xl">
                 Du har næsten ret!

@@ -18,7 +18,7 @@ export default function GuessMeaning() {
 }
 
 function ShowAnswerButton() {
-    const checkAnswer = generalState(_ => _.checkAnswer);
+    const checkAnswer = generalState(_ => _.checkAnswerGuessMeaning);
 
     return (
         <HStack mt={8}>
@@ -35,7 +35,7 @@ function RightOrWrong() {
 
     return (
         <Box>
-            <Alert status="info" variant="subtle" mt={"8"} p={5}>
+            <Alert status="info" variant="subtle" mt={"4"} p={5}>
                 <SentenceDisplayer isDanish={false}>{english ?? ""}</SentenceDisplayer>
             </Alert>
             <HStack mt={8}>

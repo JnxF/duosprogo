@@ -30,7 +30,10 @@ export type GameState = {
 
     // State mutations
     startGame: () => void;
-    checkAnswer: () => void;
+    checkAnswerTranslateSentence: () => void;
+    checkAnswerGuessMeaning: () => void;
+    checkAnswerSpelling: (isCorrect: boolean) => void;
+
     toggleVolume: () => void;
     nextExercise: () => void;
 
@@ -91,33 +94,44 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
         });
     },
 
-    checkAnswer: () => {
+    checkAnswerTranslateSentence: () => {
         // Check if the answer is correct
         const { currentTranslation, exerciseType } = get();
 
-        if (exerciseType === ExerciseType.TranslateSentenceExercise) {
-            const normalize = (input: string) => {
-                let res = input.trim();
-                res = res.toLowerCase();
-                res = res.replace(/\s+/g, " ");
-                return res;
-            }
-
-            const areEqual = (a: string, b: string) => {
-                const dist = levenshtein(a, b);
-                if (dist === 0) return AnswerScore.RIGHT;
-                else if (dist <= 2) return AnswerScore.ALMOST;
-                return AnswerScore.WRONG;
-            }
-
-            let a = normalize((document.getElementById("answer") as HTMLTextAreaElement).value);
-            let b = normalize(currentTranslation?.english ?? " ");
-
-            set({ answerScore: areEqual(a, b) });
+        const normalize = (input: string) => {
+            let res = input.trim();
+            res = res.toLowerCase();
+            res = res.replace(/\s+/g, " ");
+            return res;
         }
+
+        const areEqual = (a: string, b: string) => {
+            const dist = levenshtein(a, b);
+            if (dist === 0) return AnswerScore.RIGHT;
+            else if (dist <= 2) return AnswerScore.ALMOST;
+            return AnswerScore.WRONG;
+        }
+
+        let a = normalize((document.getElementById("answer") as HTMLTextAreaElement).value);
+        let b = normalize(currentTranslation?.english ?? " ");
+
+        set({ answerScore: areEqual(a, b) });
 
         set({ gameState: States.CheckingAnswer })
     },
+
+    checkAnswerGuessMeaning: () => {
+        set({ gameState: States.CheckingAnswer })
+    },
+
+    checkAnswerSpelling: (isCorrect: boolean) => {
+        const answerScore = isCorrect
+            ? AnswerScore.RIGHT
+            : AnswerScore.WRONG;
+        set({ answerScore });
+        set({ gameState: States.CheckingAnswer })
+    },
+
 
     toggleVolume: (): void => {
         const { volumeActivated } = get();

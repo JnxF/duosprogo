@@ -14,7 +14,8 @@ import GeneralExercise from "./GeneralExercise";
 export function Spelling() {
     const formHook = useState("" as any)
     const gameState = generalState(_ => _.gameState);
-    const checkAnswer = generalState(_ => _.checkAnswer)
+    const checkAnswer = generalState(_ => _.checkAnswerSpelling)
+    const addConditional = generalState(_ => _.addConditional)
 
     const english = generalState(_ => _.currentTranslation?.english);
     const danish = generalState(_ => _.currentTranslation?.danish) ?? "";
@@ -23,39 +24,37 @@ export function Spelling() {
 
     // Prevent options from changing
     useEffect(() => {
-        let good = danish;
-        let wrong1: any = null;
-        let wrong2: any = null;
+        let [good, wrong1, wrong2] = [danish, "", ""];
 
+        // Shuffle one wrong answer once
         do {
             wrong1 = permuteWord(danish, Math.random() * permuteRange);
         } while (wrong1 === good)
 
+        // Shuffle the other wrong answer twice
         do {
             wrong2 = permuteWord(danish, Math.random() * permuteRange);
             wrong2 = permuteWord(wrong2, Math.random() * permuteRange);
         } while ([good, wrong1].includes(wrong2))
 
-        const optionCandidates = [good, wrong1, wrong2]
+        const optionCandidates = [good, wrong1, wrong2];
         shuffle(optionCandidates);
         setOptions(optionCandidates);
-    }, []);
+    }, [danish]);
 
     return (
         <GeneralExercise title="Hvad er den rigtige stavemåde?">
             <SentenceDisplayer isDanish={false}>{english ?? ""}</SentenceDisplayer>
             <TreeOptions formHook={formHook} options={options}></TreeOptions>
-            <HStack mt={5}>
+            <HStack mt={4}>
                 <Spacer />
                 <Button
                     size="md"
                     colorScheme="blue"
-                    onClick={() => {
-                        if (gameState === States.RunningExercise) {
-                            checkAnswer();
-                        } else {
-                        }
-                    }}
+                    onClick={() => gameState === States.RunningExercise
+                        ? checkAnswer(formHook[0] === danish)
+                        : addConditional()
+                    }
                     className={"nextStep"}
                 >
                     {gameState === States.RunningExercise ? "Tjek" : "Fortsæt"}
@@ -92,16 +91,19 @@ function SpellingFeedback() {
     const answerScore = generalState(_ => _.answerScore);
 
     const right = (
-        <Alert status="success" variant="subtle" mt={"8"} p={5}>
+        <Alert status="success" variant="subtle" mt={"4"} px={5} py={7}>
             <AlertIcon boxSize="40px" mr={0} />
             <AlertTitle mt={1} mb={1} ml={5} fontSize="xl">
-                Du har ret!
+                Du har ret
             </AlertTitle>
+            <AlertDescription ml={5}>
+                <SentenceDisplayer isDanish={true}>{danish ?? ""}</SentenceDisplayer>
+            </AlertDescription>
         </Alert>
     )
 
     const wrong = (
-        <Alert status="error" variant="subtle" mt={"8"} px={5} py={7}>
+        <Alert status="error" variant="subtle" mt={"4"} px={5} py={7}>
             <AlertIcon boxSize="40px" mr={0} />
             <AlertTitle mt={1} mb={1} ml={5} fontSize="xl">
                 Oops!
