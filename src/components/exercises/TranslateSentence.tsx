@@ -9,7 +9,7 @@ import GeneralExercise from "./GeneralExercise";
 export default function TranslateSentence() {
     const gameState = generalState(_ => _.gameState);
     const danish = generalState(_ => _.currentTranslation?.danish);
-    const checkAnswer = generalState(_ => _.checkAnswerTranslateSentence);
+    const checkAnswerTranslateSentence = generalState(_ => _.checkAnswerTranslateSentence);
     const textarea = useRef(null);
     const addLetter = (letter: string) => {
         ((textarea.current)! as HTMLTextAreaElement).value += letter;
@@ -33,7 +33,7 @@ export default function TranslateSentence() {
                 onKeyPress={(e) => {
                     if (e.key === "Enter") {
                         e.preventDefault();
-                        checkAnswer();
+                        checkAnswerTranslateSentence(textarea);
                         ((textarea.current)! as HTMLTextAreaElement).blur();
                     }
                 }}
@@ -46,16 +46,19 @@ export default function TranslateSentence() {
                 <Button p={1} size="sm" variant="outline" onClick={() => addLetter('ø')} isDisabled={gameState === States.CheckingAnswer}>ø</Button>
                 <Button p={1} size="sm" variant="outline" onClick={() => addLetter('å')} isDisabled={gameState === States.CheckingAnswer}>å</Button>
             </HStack>
-            <NextStep />
+            <NextStep textarea={textarea} />
             {gameState === States.CheckingAnswer && <TranslateSentenceFeedback />}
         </GeneralExercise>
     )
 }
 
-function NextStep() {
+function NextStep({ textarea }: { textarea: React.MutableRefObject<null> }) {
     const gameState = generalState(_ => _.gameState);
     const answerScore = generalState(_ => _.answerScore);
-    const addPositive = generalState(_ => _.addPositive)
+    const addPositive = generalState(_ => _.addPositive);
+
+    const checkAnswerTranslateSentence = generalState(_ => _.checkAnswerTranslateSentence);
+    const addConditional = generalState(_ => _.addConditional);
 
     return (
         <HStack mt={4}>
@@ -63,7 +66,19 @@ function NextStep() {
             { (gameState === States.CheckingAnswer && answerScore === AnswerScore.WRONG) && <Button size="md" colorScheme="green" onClick={addPositive}>
                 Mit svar var korrekt
             </Button>}
-            <Button size="md" colorScheme="blue" onClick={gameState === States.RunningExercise ? generalState(_ => _.checkAnswerTranslateSentence) : generalState(_ => _.addConditional)} className={"nextStep"}>
+            <Button
+                size="md"
+                colorScheme="blue"
+                onClick={() => {
+                    if (gameState === States.RunningExercise) {
+                        checkAnswerTranslateSentence(textarea);
+                    }
+                    else {
+                        ((textarea.current)! as HTMLTextAreaElement).value = "";
+                        addConditional();
+                    }
+                }}
+                className={"nextStep"}>
                 {gameState === States.RunningExercise ? "Tjek" : "Fortsæt"}
             </Button>
         </HStack>

@@ -30,7 +30,7 @@ export type GameState = {
 
     // State mutations
     startGame: () => void;
-    checkAnswerTranslateSentence: () => void;
+    checkAnswerTranslateSentence: (textarea: React.MutableRefObject<null>) => void;
     checkAnswerGuessMeaning: () => void;
     checkAnswerSpelling: (isCorrect: boolean) => void;
 
@@ -94,7 +94,7 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
         });
     },
 
-    checkAnswerTranslateSentence: () => {
+    checkAnswerTranslateSentence: (textarea) => {
         // Check if the answer is correct
         const { currentTranslation, exerciseType } = get();
 
@@ -112,7 +112,7 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
             return AnswerScore.WRONG;
         }
 
-        let a = normalize((document.getElementById("answer") as HTMLTextAreaElement).value);
+        let a = normalize(((textarea.current)! as HTMLTextAreaElement).value);
         let b = normalize(currentTranslation?.english ?? " ");
 
         set({ answerScore: areEqual(a, b) });
@@ -146,12 +146,6 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
         if (completedTranslations === totalTranslations - 1) {
             set({ gameState: States.FinalSummary })
             return;
-        }
-
-        // Clear textearea
-        const textarea = document.getElementById("answer") as HTMLTextAreaElement;
-        if (textarea) {
-            textarea.value = "";
         }
 
         // New exercise
