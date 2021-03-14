@@ -72,13 +72,13 @@ function TreeOptions({ options, formHook }: { options: string[], formHook: any }
     return (
         <RadioGroup onChange={setSelectedValue} value={selectedValue} mt={5}>
             <Stack direction="column">
-                <Radio size="lg" value={opt1} isDisabled={gameState === States.CheckingAnswer}>
+                <Radio size="lg" value={opt1} id={"radio1"} isDisabled={gameState === States.CheckingAnswer}>
                     <Text fontSize="xl">{opt1}</Text>
                 </Radio>
-                <Radio size="lg" value={opt2} isDisabled={gameState === States.CheckingAnswer}>
+                <Radio size="lg" value={opt2} id={"radio2"} isDisabled={gameState === States.CheckingAnswer}>
                     <Text fontSize="xl">{opt2}</Text>
                 </Radio>
-                <Radio size="lg" value={opt3} isDisabled={gameState === States.CheckingAnswer}>
+                <Radio size="lg" value={opt3} id={"radio3"} isDisabled={gameState === States.CheckingAnswer}>
                     <Text fontSize="xl">{opt3}</Text>
                 </Radio>
             </Stack>

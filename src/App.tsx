@@ -9,14 +9,23 @@ import Main from "./components/Main";
 import { generalState } from "./state/state";
 
 export function App() {
-
-  // When clicking enter, 
+  // Manage keyboard operations
   const kp = (e: KeyboardEvent) => {
     const elementIsBody = (e.target as any).localName === "body";
+
+    // Trigger next button if enter or space is pressed
     const keyIsNext = ["Enter", "Space"].includes(e.code);
     if (elementIsBody && keyIsNext) {
       const nexts = document.getElementsByClassName("nextStep");
       Array.prototype.forEach.call(nexts, (next) => next.click());
+    }
+
+    // Select radio button 1, 2 or 3 using the keyboard
+    if (elementIsBody) {
+      [1, 2, 3].forEach(i => {
+        if (e.code === `Digit${i}`)
+          document.getElementById(`radio${i}`)?.click();
+      })
     }
   };
 
