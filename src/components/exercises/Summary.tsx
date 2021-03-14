@@ -32,8 +32,8 @@ export default function Summary() {
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {generalState(_ => _.wrongTranslations).map(translation => (
-                        <Tr>
+                    {generalState(_ => _.wrongTranslations).map((translation, idx) => (
+                        <Tr key={idx}>
                             <Td>{translation.danish}</Td>
                             <Td >{translation.english}</Td>
                             <Td>{translation.category.replace(/_/g, " ")}</Td>

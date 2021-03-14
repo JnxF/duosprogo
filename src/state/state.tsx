@@ -95,7 +95,6 @@ export const generalState = create<GameState>((set: SetState<GameState>, get: Ge
     },
 
     checkAnswerTranslateSentence: (textarea) => {
-        // Check if the answer is correct
         const { currentTranslation } = get();
 
         const normalize = (input: string) => {

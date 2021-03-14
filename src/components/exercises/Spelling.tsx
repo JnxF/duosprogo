@@ -44,7 +44,7 @@ export function Spelling() {
         const optionCandidates = [good, wrong1, wrong2];
         shuffle(optionCandidates);
         setOptions(optionCandidates);
-    }, [danish]);
+    }, [danish, permuteRange]);
 
     return (
         <GeneralExercise title="Hvad er den rigtige stavemåde?">

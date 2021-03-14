@@ -24,7 +24,7 @@ export function GlosarModal() {
                         </Link> (modul 2, eller DU 3.2).
                     </Text>
                     <Accordion allowToggle>
-                        {Object.entries(organizedTranslations).map(([modul, categories]) => <AccordionItem key={modul}>
+                        {Object.entries(organizedTranslations).map(([modul, categories], idx1) => <AccordionItem key={idx1}>
                             <AccordionButton>
                                 <Box flex="1" textAlign="left">
                                     <Heading size="md">Modul {modul}</Heading>
@@ -32,17 +32,17 @@ export function GlosarModal() {
                                 <AccordionIcon />
                             </AccordionButton>
                             <AccordionPanel pb={4} ml={5}>
-                                {Object.entries(categories).map(([category, translations]) => <Box key={category}>
+                                {Object.entries(categories).map(([category, translations], idx2) => <Box key={idx2}>
                                     <Heading size="sm">
                                         {category.replace(/_/g, " ")}
                                         <Badge ml={3} variant="solid" colorScheme="blue">{translations.length}</Badge>
                                     </Heading>
                                     <Table size="sm" mt={3} mb={7} variant="striped" colorScheme="blackAlpha">
                                         <Tbody>
-                                            {translations.map(translation => (
-                                                <Tr key={translation.danish + translation.english}>
-                                                    <Td key={translation.danish} w={"50%"}>{translation.danish}</Td>
-                                                    <Td key={translation.english} w={"50%"}>{translation.english}</Td>
+                                            {translations.map((translation, idx) => (
+                                                <Tr key={idx}>
+                                                    <Td w={"50%"}>{translation.danish}</Td>
+                                                    <Td w={"50%"}>{translation.english}</Td>
                                                 </Tr>
                                             ))}
                                         </Tbody>
