@@ -1,9 +1,3 @@
-<br>
-<p align="center">
-<img src="cover.png" width=50%>
-</p>
-<br>
-
 # Duosprogo
 [![CodeQL](https://github.com/JnxF/duosprogo/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/JnxF/duosprogo/actions/workflows/codeql-analysis.yml)
 ![Hits](https://visitor-badge.glitch.me/badge?page_id=jnxf.duosprogo)
@@ -12,6 +6,10 @@
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/JnxF/duosprogo.svg)](https://github.com/JnxF/duosprogo)
 [![GitHub contributors](https://img.shields.io/github/contributors/JnxF/duosprogo.svg)](https://GitHub.com/JnxF/duosprogo/graphs/contributors/)
 [![GitHub license](http://img.shields.io/github/license/JnxF/duosprogo.svg)](https://github.com/JnxF/duosprogo/blob/master/LICENSE)
+
+<p align="center">
+<img src="cover.png">
+</p>
 
 Duosprogo is _the_ React frontend to learn Danish.
 
