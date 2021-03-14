@@ -1,5 +1,5 @@
 import { Alert, AlertDescription, AlertIcon, AlertTitle, Button, HStack, Spacer, Text, Textarea } from "@chakra-ui/react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { AnswerScore } from "../../state/AnswerScore";
 import { generalState } from "../../state/state";
 import { States } from "../../state/States";
@@ -14,6 +14,10 @@ export default function TranslateSentence() {
     const addLetter = (letter: string) => {
         ((textarea.current)! as HTMLTextAreaElement).value += letter;
     }
+
+    useEffect(() => {
+        ((textarea.current)! as HTMLTextAreaElement).focus();
+    }, [danish]);
 
     return (
         <GeneralExercise title="Oversæt denne sætning">
