@@ -53,12 +53,18 @@ function MappedText({ children, isDanish }: { children: string, isDanish: boolea
     return <Text as="span">
         {children.split(" ").map((word, idx) => {
             const tooltipHint = translatedWord(word);
-            if (!tooltipHint) return <><Text as="span">{word}</Text>{' '}</>
-            return (<Text as="span" key={idx}>
-                <Tooltip label={tooltipHint} color='gray.50' aria-label="A tooltip">
-                    <Text as="span" borderBottom="2px" borderColor={"gray.300"} pb={1}>{word}</Text>
-                </Tooltip>{' '}
-            </Text>)
+            if (!tooltipHint) {
+                return (
+                    <Text as="span" key={idx}>{word}{' '}</Text>
+                );
+            }
+            return (
+                <Text as="span" key={idx}>
+                    <Tooltip label={tooltipHint} color='gray.50' aria-label="A tooltip">
+                        <Text as="span" borderBottom="2px" borderColor={"gray.300"} pb={1}>{word}</Text>
+                    </Tooltip>{' '}
+                </Text>
+            );
         })}
     </Text>
 }
