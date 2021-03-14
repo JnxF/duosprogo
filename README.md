@@ -5,6 +5,7 @@
 <br>
 
 # Duosprogo
+[![CodeQL](https://github.com/JnxF/duosprogo/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/JnxF/duosprogo/actions/workflows/codeql-analysis.yml)
 ![Hits](https://visitor-badge.glitch.me/badge?page_id=jnxf.duosprogo)
 [![GitHub stars](https://img.shields.io/github/stars/JnxF/duosprogo.svg)](https://GitHub.com/JnxF/duosprogo/stargazers/)
 [![GitHub forks](https://img.shields.io/github/forks/JnxF/duosprogo.svg)](https://GitHub.com/JnxF/duosprogo/network/)
