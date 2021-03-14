@@ -27,15 +27,19 @@ export function Spelling() {
         let [good, wrong1, wrong2] = [danish, "", ""];
 
         // Shuffle one wrong answer once
+        let trials = 0;
         do {
             wrong1 = permuteWord(danish, Math.random() * permuteRange);
-        } while (wrong1 === good)
+            trials += 1;
+        } while (wrong1 === good && trials < 30)
 
         // Shuffle the other wrong answer twice
+        trials = 0;
         do {
             wrong2 = permuteWord(danish, Math.random() * permuteRange);
             wrong2 = permuteWord(wrong2, Math.random() * permuteRange);
-        } while ([good, wrong1].includes(wrong2))
+            trials += 1;
+        } while ([good, wrong1].includes(wrong2) && trials < 30)
 
         const optionCandidates = [good, wrong1, wrong2];
         shuffle(optionCandidates);
