@@ -110,7 +110,7 @@ function SpellingFeedback() {
         <Alert status="error" variant="subtle" mt={"4"} px={5} py={7}>
             <AlertIcon boxSize="40px" mr={0} />
             <AlertTitle mt={1} mb={1} ml={5} fontSize="xl">
-                Oops!
+                Ups!
             </AlertTitle>
             <AlertDescription ml={5} mt={-3}>
                 <Text mb={1}>Det rigtige svar er</Text>

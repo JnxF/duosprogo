@@ -20,7 +20,7 @@ export default function Jumbotron({ onClick }: any) {
             startGame();
             if (selectedCategories.length === 0) {
                 toast({
-                    title: "Oops!",
+                    title: "Ups!",
                     description: "Vælg mindst én kategori.",
                     status: "error",
                     position: "top-right",
