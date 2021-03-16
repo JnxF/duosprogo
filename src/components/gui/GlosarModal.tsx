@@ -1,6 +1,6 @@
 import { Button } from "@chakra-ui/button";
-import { ArrowForwardIcon, ExternalLinkIcon } from "@chakra-ui/icons";
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Badge, Box, Heading, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, Tbody, Td, Text, Tr, useDisclosure } from "@chakra-ui/react";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Badge, Box, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, Tbody, Td, Text, Tr, useDisclosure } from "@chakra-ui/react";
 import { organizedTranslations } from "../../Data";
 
 export function GlosarModal() {
@@ -14,15 +14,6 @@ export function GlosarModal() {
                 <ModalHeader>Glosar</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    <Text mb={5}>
-                        Glosaret for denne app er hentet fra Forlaget Synopes bøger{" "}
-                        <Link color="blue.600" href="http://synope.dk/paa-vej-til-dansk.htm" isExternal>
-                            På vej til dansk <ExternalLinkIcon mx="2px" />
-                        </Link> (modul 1, eller DU 3.1) og{" "}
-                        <Link color="blue.600" href="http://synope.dk/videre-mod-dansk.htm" isExternal>
-                            Videre mod dansk <ExternalLinkIcon mx="2px" />
-                        </Link> (modul 2, eller DU 3.2).
-                    </Text>
                     <Accordion allowToggle>
                         {Object.entries(organizedTranslations).map(([modul, categories], idx1) => <AccordionItem key={idx1}>
                             <AccordionButton>

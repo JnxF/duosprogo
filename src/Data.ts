@@ -7,148 +7,100 @@ export interface Translation {
 
 export const data: Translation[] = [
     {
-        "danish": "tillægsord",
-        "english": "adjective",
+        "danish": "Jeg hedder Maria",
+        "english": "My name is Maria",
         "modul": 1,
-        "category": "grammar_categories"
-    },
-    {
-        "danish": "datid",
-        "english": "past",
-        "modul": 1,
-        "category": "grammar_categories"
-    },
-    {
-        "danish": "navnemåde",
-        "english": "infinitive",
-        "modul": 1,
-        "category": "grammar_categories"
-    },
-    {
-        "danish": "udsagnsord",
-        "english": "verb",
-        "modul": 1,
-        "category": "grammar_categories"
-    },
-    {
-        "danish": "ordstilling",
-        "english": "syntax",
-        "modul": 1,
-        "category": "grammar_categories"
-    },
-    {
-        "danish": "ental",
-        "english": "singular",
-        "modul": 1,
-        "category": "grammar_categories"
-    },
-    {
-        "danish": "flertal",
-        "english": "plural",
-        "modul": 1,
-        "category": "grammar_categories"
-    },
-    {
-        "danish": "nutid",
-        "english": "present",
-        "modul": 1,
-        "category": "grammar_categories"
-    },
-    {
-        "danish": "Jeg hedder Khalid",
-        "english": "My name is Khalid",
-        "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Hvad hedder du?",
         "english": "What is your name?",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Hvor kommer du fra?",
         "english": "Where are you from?",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
-        "danish": "Jeg kommer fra Marokko",
-        "english": "I am from Marokko",
+        "danish": "Jeg kommer fra Spanien",
+        "english": "I am from Spanien",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Hvad sprog taler du?",
         "english": "What language do you speak?",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Jeg taler engelsk",
         "english": "I speak English",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Hvad med dig?",
         "english": "What about you?",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Hvad hedder du til fornavn?",
         "english": "What is your first name?",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Hvordan staver du det?",
         "english": "How do you spell it?",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Hvad hedder du til efternavn?",
         "english": "What's your last name?",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Hvem er det?",
         "english": "Who is it?",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
-        "danish": "Det er Sahir",
-        "english": "It is Sahir",
+        "danish": "Det er Carla",
+        "english": "It is Carla",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Taler han også dansk?",
         "english": "Does she also speak Danish?",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Hvad er Carlas nationalitet?",
         "english": "What is Carla's nationality?",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Hun er brasilianer",
         "english": "She is Brazilian",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Hvad er hendes modersmål?",
         "english": "What is her mother tongue?",
         "modul": 1,
-        "category": "præsentation_1"
+        "category": "introduction"
     },
     {
         "danish": "Kina",
@@ -863,762 +815,6 @@ export const data: Translation[] = [
         "english": "one billion",
         "modul": 1,
         "category": "cardinals"
-    },
-    {
-        "danish": "hvor gammel er du?",
-        "english": "how old are you?",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "jeg er 22",
-        "english": "I'm 22",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "hvor bor du?",
-        "english": "where do you live?",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "Jeg bor i Vestergade",
-        "english": "I live in Vestergade",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "Hvor i vestergade?",
-        "english": "Where in vestergade?",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "I nummer 38",
-        "english": "In the number 38",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "Hvad sal bor du på?",
-        "english": "What floor do you live on?",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "Anden sal til højre",
-        "english": "Second floor to the right",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "Bor du alene?",
-        "english": "Do you live alone?",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "Jeg bor sammen med min familie",
-        "english": "I live together with my family",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "Jeg bor sammen med min kæreste",
-        "english": "I live with my boyfriend",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "Jeg bor sammen med en ven",
-        "english": "I live with a friend",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "Jeg bor sammen med en veninde",
-        "english": "I live with a girl friend",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "Hvad er dit telefonnummer?",
-        "english": "What is your phone number?",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "Har du en e-mailadresse?",
-        "english": "Do you have an email address?",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "punktum",
-        "english": "dot",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "bindestreg",
-        "english": "hyphen",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "underscore",
-        "english": "underscore",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "snabel-a",
-        "english": "at",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "Han er gift",
-        "english": "He is married",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "Han bor i Saxogade",
-        "english": "He lives in Saxogade",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "alder",
-        "english": "age",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "nationalitet",
-        "english": "nationality",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "mand",
-        "english": "man",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "kvinde",
-        "english": "woman",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "gift",
-        "english": "married",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "ugift",
-        "english": "single",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "gade",
-        "english": "street",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "underskrift",
-        "english": "signature",
-        "modul": 1,
-        "category": "age_address_telephone_email"
-    },
-    {
-        "danish": "hvordan går det?",
-        "english": "how are you?",
-        "modul": 1,
-        "category": "i_klassen_1"
-    },
-    {
-        "danish": "det går godt",
-        "english": "it goes well",
-        "modul": 1,
-        "category": "i_klassen_1"
-    },
-    {
-        "danish": "det går også godt",
-        "english": "I am also fine",
-        "modul": 1,
-        "category": "i_klassen_1"
-    },
-    {
-        "danish": "vil du med i kantinen?",
-        "english": "do you want to go to the cafeteria?",
-        "modul": 1,
-        "category": "i_klassen_1"
-    },
-    {
-        "danish": "vil du også med?",
-        "english": "do you want to come too?",
-        "modul": 1,
-        "category": "i_klassen_1"
-    },
-    {
-        "danish": "jeg bliver her",
-        "english": "I will be here",
-        "modul": 1,
-        "category": "i_klassen_1"
-    },
-    {
-        "danish": "er det svært?",
-        "english": "is it hard?",
-        "modul": 1,
-        "category": "i_klassen_1"
-    },
-    {
-        "danish": "det er lidt svært",
-        "english": "it's a little hard",
-        "modul": 1,
-        "category": "i_klassen_1"
-    },
-    {
-        "danish": "vi ses i morgen",
-        "english": "I'll see you tomorrow",
-        "modul": 1,
-        "category": "i_klassen_1"
-    },
-    {
-        "danish": "selv tak",
-        "english": "you're welcome",
-        "modul": 1,
-        "category": "i_klassen_1"
-    },
-    {
-        "danish": "hej hej",
-        "english": "bye bye",
-        "modul": 1,
-        "category": "i_klassen_1"
-    },
-    {
-        "danish": "en bog",
-        "english": "a book",
-        "modul": 1,
-        "category": "ting_i_klassen"
-    },
-    {
-        "danish": "et papir",
-        "english": "a paper",
-        "modul": 1,
-        "category": "ting_i_klassen"
-    },
-    {
-        "danish": "en blyant",
-        "english": "a pencil",
-        "modul": 1,
-        "category": "ting_i_klassen"
-    },
-    {
-        "danish": "en kop",
-        "english": "a cup",
-        "modul": 1,
-        "category": "ting_i_klassen"
-    },
-    {
-        "danish": "et ur",
-        "english": "a clock",
-        "modul": 1,
-        "category": "ting_i_klassen"
-    },
-    {
-        "danish": "en nøgle",
-        "english": "a key",
-        "modul": 1,
-        "category": "ting_i_klassen"
-    },
-    {
-        "danish": "en taske",
-        "english": "a backpack",
-        "modul": 1,
-        "category": "ting_i_klassen"
-    },
-    {
-        "danish": "en ordbog",
-        "english": "a dictionary",
-        "modul": 1,
-        "category": "ting_i_klassen"
-    },
-    {
-        "danish": "en kuglepen",
-        "english": "a pen",
-        "modul": 1,
-        "category": "ting_i_klassen"
-    },
-    {
-        "danish": "et penalhus",
-        "english": "a pencil case",
-        "modul": 1,
-        "category": "ting_i_klassen"
-    },
-    {
-        "danish": "et blyantspidser",
-        "english": "sharpener",
-        "modul": 1,
-        "category": "ting_i_klassen"
-    },
-    {
-        "danish": "det er min",
-        "english": "it's mine",
-        "modul": 1,
-        "category": "hvis..._er_det"
-    },
-    {
-        "danish": "det er mit",
-        "english": "it's mine",
-        "modul": 1,
-        "category": "hvis..._er_det"
-    },
-    {
-        "danish": "det er din",
-        "english": "it's yours",
-        "modul": 1,
-        "category": "hvis..._er_det"
-    },
-    {
-        "danish": "det er dit",
-        "english": "it's yours",
-        "modul": 1,
-        "category": "hvis..._er_det"
-    },
-    {
-        "danish": "det er hendes",
-        "english": "it's hers",
-        "modul": 1,
-        "category": "hvis..._er_det"
-    },
-    {
-        "danish": "det er hans",
-        "english": "it's his",
-        "modul": 1,
-        "category": "hvis..._er_det"
-    },
-    {
-        "danish": "det er Sofies",
-        "english": "It's Sofie's",
-        "modul": 1,
-        "category": "hvis..._er_det"
-    },
-    {
-        "danish": "Det er Peters",
-        "english": "It's Peter's",
-        "modul": 1,
-        "category": "hvis..._er_det"
-    },
-    {
-        "danish": "det er skolens",
-        "english": "It's from the school",
-        "modul": 1,
-        "category": "hvis..._er_det"
-    },
-    {
-        "danish": "Du er inviteret til middag kl. 18",
-        "english": "You are invited to dinner at. 18",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Hvad tid kommer du?",
-        "english": "What time are you coming?",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Før klokken 18",
-        "english": "Before 18 o'clock",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Efter klokken 18",
-        "english": "After 18 o'clock",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Hvad gør du i dit hjemland?",
-        "english": "What do you do in your home country?",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Hvilke traditionen har I?",
-        "english": "Which tradition do you have?",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Du skal have gæster til middag",
-        "english": "You have to have guests for dinner",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Gæsterne ringer på døren",
-        "english": "Guests knock on the door",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Du skal bruge saltet",
-        "english": "You need salt",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Du har besøgt en ven",
-        "english": "You have visited a friend",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Det er sent, og du skal gå",
-        "english": "It's late, and you must go",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Han er lige flyttet",
-        "english": "He just moved",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Hvordan har I det?",
-        "english": "How are you?",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Lørdag passer os fint",
-        "english": "Saturday works for us",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Hvad tid skal vi komme?",
-        "english": "When should we come?",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Det lyder godt",
-        "english": "It sounds good",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Hvor er de smukke",
-        "english": "How beautiful",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Klokken er mange",
-        "english": "It's late",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Det var rigtig hyggeligt",
-        "english": "It was really nice",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Blomsterne er flotte",
-        "english": "The flowers are beautiful",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Udsigten er fantastik",
-        "english": "The view is fantastik",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Kærlig hilsen",
-        "english": "Yours truly",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "Vi inviterer jer",
-        "english": "We invite you",
-        "modul": 2,
-        "category": "invitationer_gæster_fester"
-    },
-    {
-        "danish": "humør og følelser",
-        "english": "mood and emotions",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Hun er rigtig glad",
-        "english": "She is really happy",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Hun er spændt på at se dem igen",
-        "english": "She is excited to see them again",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Jeff er lykkelig",
-        "english": "Jeff is happy",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Han er stolt af sin lille søn",
-        "english": "He is proud of his little son",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Hun er skuffet og ked af det",
-        "english": "She is disappointed and sad",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Hun er ikke helt frisk",
-        "english": "She is not quite fresh",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Er der noget i vejen?",
-        "english": "Is there something wrong?",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "De er lidt bekymrede",
-        "english": "They are a little worried",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Hvad er der sket for Jeff?",
-        "english": "What happened to Jeff?",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Jeg har det godt",
-        "english": "I feel good",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Hun har det fint",
-        "english": "She's fine",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Vi har det o.k.",
-        "english": "We're fine",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "De har det dårligt",
-        "english": "They feel bad",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Du er i godt humør",
-        "english": "You are in a good mood",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Hun er i dårligt humør",
-        "english": "She is in a bad mood",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "glad",
-        "english": "glad",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "tildreds",
-        "english": "tildreds",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "lykkelig",
-        "english": "happy",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "stolt",
-        "english": "proud",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "ked af det",
-        "english": "sorry",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "ulykkelig",
-        "english": "unhappy",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "sur",
-        "english": "angry",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "vred",
-        "english": "angry",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "irriteret",
-        "english": "annoyed",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "utilfreds",
-        "english": "dissatisfied",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "skuffet",
-        "english": "disappointed",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "nervøs",
-        "english": "nervous",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "bange",
-        "english": "afraid",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "overrasket",
-        "english": "surprised",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "stresset",
-        "english": "stressed out",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Hun ser glad ud",
-        "english": "She looks happy",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Han ser glad ud",
-        "english": "He looks happy",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Du ser trist ud",
-        "english": "You look sad",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Hun smiler",
-        "english": "She smiles",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Du griner",
-        "english": "You are laughing",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Jeg græder",
-        "english": "I'm crying",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Det lyder godt",
-        "english": "It sounds good",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Super!",
-        "english": "Super!",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Hvor godt!",
-        "english": "How well!",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Det kan jeg godt forstå",
-        "english": "I can understand that",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "Held og lykke",
-        "english": "Good luck",
-        "modul": 2,
-        "category": "humør_følelser"
-    },
-    {
-        "danish": "God fornøjelse!",
-        "english": "Enjoy!",
-        "modul": 2,
-        "category": "humør_følelser"
     }
 ]
 
