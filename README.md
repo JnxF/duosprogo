@@ -15,7 +15,7 @@ Duosprogo is _the_ React frontend to learn Danish.
 
 ## Installation
 
-Nagivate to the root folder and install the dependencies with [npm](https://www.npmjs.com/).
+Navigate to the root folder and install the dependencies with [npm](https://www.npmjs.com/).
 
 ```bash
 npm install
